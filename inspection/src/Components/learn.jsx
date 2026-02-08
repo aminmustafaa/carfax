@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Check } from 'lucide-react';
 // Make sure to have your Car Fox image in your project
-import foxx from '../Images/foxx.jpg';
+import foxx from '../images/foxx.jpg';
 // Import the image for the new Hero section
 // import fruadhero from '../Images/fruadhero.jpg';
-import carr from '../Images/carr.jpg';
+import carr from '../images/carr.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const Learn = () => {
