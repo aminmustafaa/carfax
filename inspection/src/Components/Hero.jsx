@@ -105,7 +105,7 @@
 // export default CarfaxHero;
 
 import React from 'react';
-import heroimage from '../images/hero.jpg';
+import heroimage from '../Images/hero.jpg';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import PricingPage from './Getreport';
