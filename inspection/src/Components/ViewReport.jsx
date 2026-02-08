@@ -11,15 +11,15 @@ import {
 } from 'lucide-react';
 
 // Make sure these paths are correct in your project
-import view from '../Images/view.jpg';
-import view1 from '../Images/view1.jpg';
-import view2 from '../Images/view2.jpg';
-import view3 from '../Images/view3.jpg';
-import view4 from '../Images/view4.jpg';
-import view5 from '../Images/view5.jpg';
-import view6 from '../Images/view6.jpg';
-import search from '../Images/search.jpg';
-import lienguarantee from '../Images/lienguarantee.jpg';
+import view from '../assets/view.jpg';
+import view1 from '../assets/view1.jpg';
+import view2 from '../assets/view2.jpg';
+import view3 from '../assets/view3.jpg';
+import view4 from '../assets/view4.jpg';
+import view5 from '../assets/view5.jpg';
+import view6 from '../assets/view6.jpg';
+import search from '../assets/search.jpg';
+import lienguarantee from '../assets/lienguarantee.jpg';
 
 const CarfaxReport = () => {
 

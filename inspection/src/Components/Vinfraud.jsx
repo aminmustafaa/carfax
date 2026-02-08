@@ -1,10 +1,10 @@
 import React from 'react';
-import fruadhero from '../Images/fruadhero.jpg'; // Replace with your actual car image
-import svg from '../Images/svg.jpg'; // Replace with your actual SVG image
-import svg1 from '../Images/svg1.jpg'; // Replace with your actual SVG image
-import svg2 from '../Images/svg2.jpg'; // Replace with your actual SVG image
-import mob from '../Images/mob.jpg'; // Replace with your actual mobile image
-import mob1 from '../Images/mob1.jpg'; // Replace with your actual mobile image
+import fruadhero from '../assets/fruadhero.jpg'; // Replace with your actual car image
+import svg from '../assets/svg.jpg'; // Replace with your actual SVG image
+import svg1 from '../assets/svg1.jpg'; // Replace with your actual SVG image
+import svg2 from '../assets/svg2.jpg'; // Replace with your actual SVG image
+import mob from '../assets/mob.jpg'; // Replace with your actual mobile image
+import mob1 from '../assets/mob1.jpg'; // Replace with your actual mobile image
 
 const VinFraudPage = () => {
     return (

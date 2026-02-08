@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import cab from '../Images/cab.jpg';
-import cab1 from '../Images/cab1.jpg';
-import carfox from '../Images/carfox.jpg';
+import cab from '../assets/cab.jpg';
+import cab1 from '../assets/cab1.jpg';
+import carfox from '../assets/carfox.jpg';
 import PricingPage from '../Components/Getreport.jsx';
 // import vin from '../images/vin.jpg'; // Unused
 

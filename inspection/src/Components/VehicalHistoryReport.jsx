@@ -1,8 +1,8 @@
 import React from 'react';
-import historyReportImage from '../Images/history.jpg';
-import icon1 from '../Images/damage-icon.jpg';
-import icon2 from '../Images/unfixed-recall-icon.jpg';
-import icon3 from '../Images/lien-icon.jpg';
+import historyReportImage from '../assets/history.jpg';
+import icon1 from '../assets/damage-icon.jpg';
+import icon2 from '../assets/unfixed-recall-icon.jpg';
+import icon3 from '../assets/lien-icon.jpg';
 import { useNavigate } from 'react-router-dom';
 
 const VehicalHistoryReport = () => {

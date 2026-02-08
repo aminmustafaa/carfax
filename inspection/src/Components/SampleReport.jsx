@@ -48,10 +48,10 @@
 
 
 import React from 'react'
-import sample from '../Images/sample.jpg'; // Ensure this path is correct based on your folder structure
-import car from '../Images/car.jpg'; // Placeholder for car with lien image
-import car1 from '../Images/car1.jpg'; // Placeholder for car only image
-import fox from '../Images/fox.jpg'; // Placeholder for fox mascot image
+import sample from '../assets/sample.jpg'; // Ensure this path is correct based on your folder structure
+import car from '../assets/car.jpg'; // Placeholder for car with lien image
+import car1 from '../assets/car1.jpg'; // Placeholder for car only image
+import fox from '../assets/fox.jpg'; // Placeholder for fox mascot image
 import { useNavigate } from 'react-router-dom';
 
 

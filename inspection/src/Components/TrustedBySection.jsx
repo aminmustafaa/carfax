@@ -1,15 +1,15 @@
 import React from 'react';
-import image1 from '../Images/autotrader.jpg';
-import image2 from '../Images/caa-logo.jpg';
-import image3 from '../Images/canadian.jpg';
-import image4 from '../Images/GM.jpg';
-import image5 from '../Images/HONDA.jpg';
-import image6 from '../Images/smSize.jpg';
-import image7 from '../Images/kijiji.jpg';
-import image8 from '../Images/lespac.jpg';
-import image9 from '../Images/nissan.jpg';
-import image10 from '../Images/mazda.jpg';
-import image11 from '../Images/amg.jpg';
+import image1 from '../assets/autotrader.jpg';
+import image2 from '../assets/caa-logo.jpg';
+import image3 from '../assets/canadian.jpg';
+import image4 from '../assets/GM.jpg';
+import image5 from '../assets/HONDA.jpg';
+import image6 from '../assets/smSize.jpg';
+import image7 from '../assets/kijiji.jpg';
+import image8 from '../assets/lespac.jpg';
+import image9 from '../assets/nissan.jpg';
+import image10 from '../assets/mazda.jpg';
+import image11 from '../assets/amg.jpg';
 
 // --- Component 2: Trusted By Section (Logos) ---
 const TrustedBySection = () => {
