@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Check } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
-import foxx from '../images/foxx.jpg';
+import foxx from '../Images/foxx.jpg';
 
 const PricingPage = () => {
 
