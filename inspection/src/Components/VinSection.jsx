@@ -1,5 +1,5 @@
 import React from 'react';
-import VinImage from '../assets/vinfraud.jpg'
+import VinImage from '../assets/Vinfraud.jpg'
 import { useNavigate } from 'react-router-dom';
 
 const VinFraudSection = () => {
