@@ -141,11 +141,14 @@ app.get('/api/admin/orders', authenticateToken, async (req, res) => {
     }
 });
 
+<<<<<<< HEAD
 // Main Route (To test if it works)
 app.get('/', (req, res) => {
     res.send('Backend is successfully running on Vercel!');
 });
 
+=======
+>>>>>>> 9c0d5e4f484e2ed46294a856e727458672002dac
 // --- VERCEL CONFIGURATION (CRITICAL) ---
 // This exports the app so Vercel can run it as a Serverless Function
 module.exports = app;
@@ -156,4 +159,8 @@ if (require.main === module) {
     app.listen(PORT, () => {
         console.log(`🚀 Server running locally on port ${PORT}`);
     });
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9c0d5e4f484e2ed46294a856e727458672002dac
