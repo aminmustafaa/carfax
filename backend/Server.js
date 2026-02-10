@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const axios = require('axios');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const helmet = require('helmet');
@@ -9,43 +8,43 @@ const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000; // Render automatically sets this port
-
-// --- SECURITY CHECKS ---
-if (!process.env.JWT_SECRET) {
-    console.error('⚠️ WARNING: JWT_SECRET is not set. Auth will fail.');
-}
 
 // --- Middleware ---
 app.use(cors({
-    // Allow your Vercel Frontend to talk to this Render Backend
-    origin: "*", // For development/presentation, allow all. Change to specific URL later for security.
+    origin: "*", // Allows your frontend to connect
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
 app.use(helmet());
 app.use(express.json());
 
-// --- Rate Limiter ---
-// On Render, this stays in memory longer, so it works better than on Vercel
-const loginLimiter = rateLimit({
-    windowMs: 15 * 60 * 1000,
-    max: 10,
-    message: "Too many login attempts, please try again after 15 minutes"
+// --- Database Connection (Optimized for Vercel) ---
+const MONGODB_URI = process.env.MONGODB_URI;
+
+if (!MONGODB_URI) {
+    console.error("❌ MONGODB_URI is missing in Environment Variables!");
+}
+
+// Connect to MongoDB only if not already connected
+const connectDB = async () => {
+    if (mongoose.connection.readyState === 0) {
+        try {
+            await mongoose.connect(MONGODB_URI);
+            console.log("✅ New MongoDB Connection Established");
+            createDefaultAdmin();
+        } catch (error) {
+            console.error("❌ MongoDB Connection Error:", error);
+        }
+    }
+};
+
+// Ensure DB connects on every request
+app.use(async (req, res, next) => {
+    await connectDB();
+    next();
 });
 
-// --- 1. CONNECT TO MONGODB ---
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/car-reports-db';
-
-mongoose.connect(MONGODB_URI)
-    .then(() => {
-        console.log('✅ MongoDB Connected');
-        createDefaultAdmin(); // Create admin account if it doesn't exist
-    })
-    .catch(err => console.error('❌ MongoDB Connection Error:', err));
-
-
-// --- 2. SCHEMAS ---
+// --- SCHEMAS ---
 const OrderSchema = new mongoose.Schema({
     fullName: String,
     email: String,
@@ -60,7 +59,8 @@ const OrderSchema = new mongoose.Schema({
     status: { type: String, default: 'Pending' },
     createdAt: { type: Date, default: Date.now }
 });
-const Order = mongoose.model('Order', OrderSchema);
+// Use existing model to prevent OverwriteModelError in serverless
+const Order = mongoose.models.Order || mongoose.model('Order', OrderSchema);
 
 const AdminSchema = new mongoose.Schema({
     username: { type: String, unique: true, required: true },
@@ -68,12 +68,11 @@ const AdminSchema = new mongoose.Schema({
 });
 const Admin = mongoose.models.Admin || mongoose.model('Admin', AdminSchema);
 
-// --- 3. HELPER: CREATE DEFAULT ADMIN ---
+// --- HELPER: CREATE DEFAULT ADMIN ---
 const createDefaultAdmin = async () => {
     try {
-        // You can set these in Render "Environment Variables" settings
         const adminUsername = process.env.ADMIN_USERNAME || 'admin';
-        const adminPassword = process.env.ADMIN_PASSWORD || 'admin123'; // Default fallback
+        const adminPassword = process.env.ADMIN_PASSWORD || 'admin123';
 
         const existingAdmin = await Admin.findOne({ username: adminUsername });
         if (!existingAdmin) {
@@ -90,7 +89,7 @@ const createDefaultAdmin = async () => {
     }
 };
 
-// --- 4. AUTH MIDDLEWARE ---
+// --- AUTH MIDDLEWARE ---
 const authenticateToken = (req, res, next) => {
     const authHeader = req.headers['authorization'];
     const token = authHeader && authHeader.split(' ')[1];
@@ -103,13 +102,11 @@ const authenticateToken = (req, res, next) => {
     });
 };
 
-// --- 5. API ROUTES ---
-app.get('/', (req, res) => res.send('Secure Backend is Running on Render!'));
+// --- ROUTES ---
+app.get('/', (req, res) => res.send('Secure Backend is Running on Vercel!'));
 
-// Create Order Route
 app.post('/api/create-order', async (req, res) => {
     try {
-        console.log("Received Order:", req.body); // Debug log
         const newOrder = new Order(req.body);
         await newOrder.save();
         res.json({ success: true, message: "Order saved successfully", orderId: newOrder._id });
@@ -119,8 +116,7 @@ app.post('/api/create-order', async (req, res) => {
     }
 });
 
-// Admin Login
-app.post('/api/admin/login', loginLimiter, async (req, res) => {
+app.post('/api/admin/login', async (req, res) => {
     try {
         const { username, password } = req.body;
         const admin = await Admin.findOne({ username });
@@ -136,7 +132,6 @@ app.post('/api/admin/login', loginLimiter, async (req, res) => {
     }
 });
 
-// Get Orders (Protected)
 app.get('/api/admin/orders', authenticateToken, async (req, res) => {
     try {
         const orders = await Order.find().sort({ createdAt: -1 });
@@ -146,7 +141,19 @@ app.get('/api/admin/orders', authenticateToken, async (req, res) => {
     }
 });
 
-// --- START SERVER (REQUIRED FOR RENDER) ---
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
+// Main Route (To test if it works)
+app.get('/', (req, res) => {
+    res.send('Backend is successfully running on Vercel!');
 });
+
+// --- VERCEL CONFIGURATION (CRITICAL) ---
+// This exports the app so Vercel can run it as a Serverless Function
+module.exports = app;
+
+// Only run app.listen if we are NOT on Vercel (e.g. running locally)
+if (require.main === module) {
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running locally on port ${PORT}`);
+    });
+}
