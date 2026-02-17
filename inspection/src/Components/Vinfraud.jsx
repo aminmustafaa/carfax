@@ -24,7 +24,7 @@ const VinFraudPage = () => {
                             A car's <a href="#" className="text-blue-500 no-underline font-bold hover:underline">Vehicle Identification Number (VIN) </a> is like its own unique fingerprint. VIN fraud, or re-vinning, happens when a vehicle's VIN is illegally copied or "cloned" onto another vehicle. This is typically done in attempts to conceal or re-sell a stolen car.
                         </p>
                         <p className="text-lg md:text-xl leading-relaxed mb-8 text-gray-600">
-                            CARFAX Canada offers tools that can help <strong>protect you against the impacts of VIN fraud</strong> and avoid costly mistakes.
+                            CARFAX  offers tools that can help <strong>protect you against the impacts of VIN fraud</strong> and avoid costly mistakes.
                         </p>
                         <button className="w-full md:w-auto bg-[#0091ea] hover:bg-blue-600 text-white font-bold py-3 px-8 rounded transition duration-200 shadow-md">
                             Learn More

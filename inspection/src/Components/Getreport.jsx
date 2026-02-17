@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Check } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useParams, useNavigate } from 'react-router-dom';
 import foxx from '../assets/foxx.jpg';
 
@@ -150,7 +151,7 @@ const PricingPage = () => {
                         Order Your Vehicle History Report + Lien Check Today
                     </h1>
                     <p className="text-gray-600 text-base">
-                        Canada's most comprehensive vehicle report now includes a FREE History-Based Value!<sup>1</sup>
+                        World's most comprehensive vehicle report now includes a FREE History-Based Value!<sup>1</sup>
                         <a href="/learn" className="text-[#009bf1] hover:underline ml-1 no-underline font-medium">Learn More ↗</a>
                     </p>
                 </div>
@@ -170,17 +171,22 @@ const PricingPage = () => {
                             <div className="mt-auto">
                                 <div className="flex justify-center items-start text-gray-800 font-bold mb-8">
                                     <span className="text-3xl mt-2">$</span>
-                                    <span className="text-7xl leading-none">77</span>
-                                    <sup className="text-3xl mt-2">95</sup>
+                                    <span className="text-7xl leading-none">45</span>
+                                    <sup className="text-3xl mt-2">75</sup>
                                 </div>
                                 <button
-                                    onClick={() => handleBuyClick("Vehicle History Report + Lien Check", 77.95)}
+                                    onClick={() => handleBuyClick("Vehicle History Report + Lien Check", 45.95)}
                                     className="w-1/2 bg-[#009bf1] hover:bg-[#008bd9] text-white font-bold py-3 rounded text-lg mb-5 transition-colors"
                                 >
                                     Buy Now
                                 </button>
                                 <p className="text-sm text-gray-500 mb-1">Check the history and see if there's money owing.</p>
-                                <a href="/sample-report" className="text-sm text-[#009bf1] font-medium no-underline hover:underline">View sample report</a>
+                                <Link
+                                    to="/sample-report"
+                                    className="text-sm text-[#009bf1] font-medium no-underline hover:underline"
+                                >
+                                    View sample report
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -214,7 +220,12 @@ const PricingPage = () => {
                                 </button>
 
                                 <p className="text-sm text-gray-500 mb-1">Check the history of 3 vehicles for one low price!</p>
-                                <a href="/sample-report" className="text-sm text-[#009bf1] font-medium no-underline hover:underline">View sample report</a>
+                                <Link
+                                    to="/sample-report"
+                                    className="text-sm text-[#009bf1] font-medium no-underline hover:underline"
+                                >
+                                    View sample report
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -227,7 +238,12 @@ const PricingPage = () => {
                         <p className="text-sm text-gray-500 mb-3 leading-relaxed max-w-2xl">
                             This report excludes a lien check. Before selecting this option, be sure to check there's no lien on the car to avoid getting stuck with someone else's debt.
                         </p>
-                        <a href="#" className="text-sm text-[#009bf1] font-medium no-underline hover:underline">View sample report</a>
+                        <Link
+                            to="/sample-report"
+                            className="text-sm text-[#009bf1] font-medium no-underline hover:underline"
+                        >
+                            View sample report
+                        </Link>
                     </div>
 
                     <div className="flex flex-col items-center md:items-end min-w-[160px]">

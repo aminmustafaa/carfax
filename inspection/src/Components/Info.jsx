@@ -51,10 +51,10 @@ const FeaturesSection = () => {
                 {/* --- Header Text --- */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-xl font-bold text-gray-600 mb-4">
-                        Get the vehicle history report Canadians trust.
+                        Get the vehicle history report People Worldwide trust.
                     </h2>
                     <p className="text-xl text-gray-600">
-                        Every CARFAX Canada Vehicle History Report + Lien Check searches for:
+                        Every CARFAX Vehicle History Report + Lien Check searches for:
                     </p>
                 </div>
 

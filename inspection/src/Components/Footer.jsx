@@ -18,13 +18,13 @@ const Footer = () => {
         {
             title: "Products",
             links: [
-                "CARFAX Canada Vehicle History Reports",
-                "CARFAX Canada VIN Fraud Check",
-                "CARFAX Canada Vehicle Monitoring",
-                "CARFAX Canada History-Based Value",
-                "CARFAX Canada VIN Decoder",
-                "CARFAX Canada Recall Check",
-                "CARFAX Canada Car Care"
+                "CARFAX Vehicle History Reports",
+                "CARFAX VIN Fraud Check",
+                "CARFAX Vehicle Monitoring",
+                "CARFAX History-Based Value",
+                "CARFAX VIN Decoder",
+                "CARFAX Recall Check",
+                "CARFAX Car Care"
             ]
         },
         {
@@ -41,7 +41,7 @@ const Footer = () => {
                 "About",
                 "Contact",
                 "Vehicle Fraud",
-                "CARPROOF is CARFAX Canada"
+                "CARPROOF is CARFAX "
             ]
         },
         {
@@ -130,7 +130,7 @@ const Footer = () => {
                     {/* Left Side: Copyright & Links */}
                     <div className="flex flex-col space-y-4 md:space-y-6 mb-8 md:mb-0 w-full md:w-auto">
                         <p className="text-gray-400 text-xs">
-                            © 2025 CARFAX Canada ULC. All Rights Reserved.
+                            © 2025 CARFAX ULC. All Rights Reserved.
                         </p>
                         <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-6 text-sm font-medium">
                             <a href="#" className="text-gray-300 no-underline hover:text-white">Privacy/Legal</a>

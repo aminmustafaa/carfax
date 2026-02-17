@@ -33,7 +33,7 @@ const Learn = () => {
                             Unknowingly buying a car with a fraudulent VIN can land you in deep financial trouble. That car could be stolen or uninsurable. And once you buy it, its problems become your problems.
                         </p>
                         <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            CARFAX Canada VIN Fraud Check can help <strong className="font-bold text-gray-800">detect fraud before you buy</strong>, saving you from a potentially disastrous purchase.
+                            CARFAX VIN Fraud Check can help <strong className="font-bold text-gray-800">detect fraud before you buy</strong>, saving you from a potentially disastrous purchase.
                         </p>
                         <button onClick={handleClick1} className="bg-[#0091ea] hover:bg-blue-600 text-white font-bold py-3 px-10 rounded transition duration-200 shadow-sm">
                             Buy Now
@@ -165,7 +165,7 @@ const faqData = [
     { question: "How does VIN Fraud Check differ from Vehicle Monitoring?" },
     { question: "How does VIN Fraud Check differ from a Vehicle History Report?" },
     { question: "Does VIN Fraud Check prevent auto theft or fraud?" },
-    { question: "Does CARFAX Canada provide any kind of financial compensation if my vehicle is impacted by theft or fraud?" },
+    { question: "Does CARFAX provide any kind of financial compensation if my vehicle is impacted by theft or fraud?" },
     { question: "Can I run a VIN Fraud Check for any vehicle type?" },
 ];
 
