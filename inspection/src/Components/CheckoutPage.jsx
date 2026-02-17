@@ -24,7 +24,7 @@ const CheckoutPage = () => {
         fullName: '',
         address: '',
         city: '',
-        province: 'Ontario',
+        province: '',
         postalCode: '',
         vinNo: '',
         email: '',
@@ -153,13 +153,11 @@ const CheckoutPage = () => {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                     <div>
                                         <label className="block text-sm font-bold text-gray-600 mb-1">Country *</label>
-                                        <select className="w-full border border-gray-300 rounded-md p-2.5 bg-white outline-none focus:border-blue-500"><option>Canada</option><option>USA</option></select>
+                                        <select className="w-full border border-gray-300 rounded-md p-2.5 bg-white outline-none focus:border-blue-500"><option>USA</option><option>Germany</option><option>Canada</option><option>France</option><option>Italy</option><option>Spain</option><option>Netherland</option><option>Other</option></select>
                                     </div>
                                     <div>
                                         <label className="block text-sm font-bold text-gray-600 mb-1">Province *</label>
-                                        <select name="province" value={formData.province} onChange={handleChange} className="w-full border border-gray-300 rounded-md p-2.5 bg-white outline-none focus:border-blue-500">
-                                            <option>Ontario</option><option>Alberta</option><option>British Columbia</option><option>Quebec</option><option>New York</option><option>California</option><option>Other</option>
-                                        </select>
+                                        <input name="province" required value={formData.province} onChange={handleChange} type="text" className="w-full border border-gray-300 rounded-md p-2.5 outline-none focus:border-blue-500" />
                                     </div>
                                     <div>
                                         <label className="block text-sm font-bold text-gray-600 mb-1">Postal Code *</label>
@@ -206,7 +204,7 @@ const CheckoutPage = () => {
                                     Processing Payment...
                                 </>
                             ) : (
-                                "Pay & Generate Report"
+                                "Pay Now"
                             )}
                         </button>
                     </form>
@@ -228,7 +226,6 @@ const CheckoutPage = () => {
                             <SummaryItem text="Accident and damage history" />
                             <SummaryItem text="Recall information" />
                             <SummaryItem text="Lien Check Included" />
-                            <SummaryItem text="Instant PDF Download" />
                         </ul>
 
                         <div className="bg-white p-4 rounded border border-gray-200 shadow-sm">
@@ -237,12 +234,12 @@ const CheckoutPage = () => {
                                 <span className="text-gray-700 font-medium">${price.toFixed(2)}</span>
                             </div>
                             <div className="flex justify-between items-center mb-4">
-                                <span className="text-gray-500 text-sm">Tax (13%)</span>
-                                <span className="text-gray-700 font-medium">${(price * 0.13).toFixed(2)}</span>
+                                <span className="text-gray-500 text-sm">Tax (10%)</span>
+                                <span className="text-gray-700 font-medium">${(price * 0.10).toFixed(2)}</span>
                             </div>
                             <div className="border-t border-gray-200 pt-3 flex justify-between items-center">
                                 <span className="font-bold text-gray-800">Total</span>
-                                <span className="font-bold text-gray-600 text-xl">${(price * 1.13).toFixed(2)}</span>
+                                <span className="font-bold text-gray-600 text-xl">${(price * 1.10).toFixed(2)}</span>
                             </div>
                         </div>
                     </div>
