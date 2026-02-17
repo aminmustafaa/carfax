@@ -171,11 +171,11 @@ const PricingPage = () => {
                             <div className="mt-auto">
                                 <div className="flex justify-center items-start text-gray-800 font-bold mb-8">
                                     <span className="text-3xl mt-2">$</span>
-                                    <span className="text-7xl leading-none">45</span>
-                                    <sup className="text-3xl mt-2">75</sup>
+                                    <span className="text-7xl leading-none">75</span>
+                                    <sup className="text-3xl mt-2">95</sup>
                                 </div>
                                 <button
-                                    onClick={() => handleBuyClick("Vehicle History Report + Lien Check", 45.95)}
+                                    onClick={() => handleBuyClick("Vehicle History Report + Lien Check", 75.95)}
                                     className="w-1/2 bg-[#009bf1] hover:bg-[#008bd9] text-white font-bold py-3 rounded text-lg mb-5 transition-colors"
                                 >
                                     Buy Now
@@ -205,15 +205,15 @@ const PricingPage = () => {
                             <div className="mt-auto">
                                 <div className="flex justify-center items-start text-gray-800 font-bold mb-2">
                                     <span className="text-3xl mt-2">$</span>
-                                    <span className="text-7xl leading-none">146</span>
+                                    <span className="text-7xl leading-none">100</span>
                                     <sup className="text-3xl mt-2">95</sup>
                                 </div>
                                 <div className="text-sm text-gray-500 font-bold mb-8">
-                                    25% Off <span className="line-through font-normal">$195.85</span>
+                                    25% Off <span className="line-through font-normal">$135.85</span>
                                 </div>
 
                                 <button
-                                    onClick={() => handleBuyClick("3 Vehicle History Reports + 1 Lien Check", 146.95)}
+                                    onClick={() => handleBuyClick("3 Vehicle History Reports + 1 Lien Check", 100.95)}
                                     className="w-1/2 bg-[#009bf1] hover:bg-[#008bd9] text-white font-bold py-3 rounded text-lg mb-5 transition-colors"
                                 >
                                     Buy Now
@@ -232,15 +232,15 @@ const PricingPage = () => {
                 </div>
 
                 {/* BOTTOM HORIZONTAL CARD */}
-                <div className="max-w-6xl mx-auto bg-white rounded-lg border border-gray-300 p-8 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm mb-20">
+                <div className="max-w-6xl mx-auto bg-white rounded-lg border border-gray-300 p-8 flex flex-col md:flex-row items-start justify-between gap-8 shadow-sm mb-20">
                     <div className="flex-1 text-center md:text-left">
-                        <h3 className="text-xl font-bold text-gray-700 mb-3">Vehicle History Report</h3>
-                        <p className="text-sm text-gray-500 mb-3 leading-relaxed max-w-2xl">
+                        <h3 className="text-xl text-start font-bold text-gray-700 mb-3">Vehicle History Report</h3>
+                        <p className="text-sm text-start text-gray-500 mb-3 leading-relaxed max-w-2xl">
                             This report excludes a lien check. Before selecting this option, be sure to check there's no lien on the car to avoid getting stuck with someone else's debt.
                         </p>
                         <Link
                             to="/sample-report"
-                            className="text-sm text-[#009bf1] font-medium no-underline hover:underline"
+                            className="text-sm text-start text-[#009bf1] font-medium no-underline hover:underline"
                         >
                             View sample report
                         </Link>
@@ -249,11 +249,11 @@ const PricingPage = () => {
                     <div className="flex flex-col items-center md:items-end min-w-[160px]">
                         <div className="flex items-start text-gray-800 font-bold mb-4">
                             <span className="text-2xl mt-1">$</span>
-                            <span className="text-5xl leading-none">58</span>
+                            <span className="text-5xl leading-none">45</span>
                             <sup className="text-2xl mt-1">95</sup>
                         </div>
                         <button
-                            onClick={() => handleBuyClick("Vehicle History Report", 58.95)}
+                            onClick={() => handleBuyClick("Vehicle History Report", 45.95)}
                             className="bg-[#009bf1] hover:bg-[#008bd9] text-white font-bold py-3 px-10 rounded text-base transition-colors whitespace-nowrap"
                         >
                             Buy Now
